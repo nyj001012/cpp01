@@ -9,10 +9,11 @@ RM = rm -f
 all:	${NAME}
 
 ${NAME}:	${OBJS}
-		${CC} ${CFLAGS} -o ${NAME} ${OBJS}
+		@${CC} ${CFLAGS} -o ${NAME} ${OBJS}
+		@echo "\033[40;35mExecutable ${NAME} created"
 
 %.o: %.cpp
-		${CC} ${CFLAGS} -I . -c $< -o ${<:.cpp=.o}
+		@${CC} ${CFLAGS} -I . -c $< -o ${<:.cpp=.o}
 
 clean:
 		${RM} ${OBJS}
