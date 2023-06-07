@@ -6,12 +6,14 @@
 /*   By: yena <yena@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 20:39:58 by yena              #+#    #+#             */
-/*   Updated: 2023/06/07 21:22:04 by yena             ###   ########.fr       */
+/*   Updated: 2023/06/07 21:28:24 by yena             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CPP01_EX03_HUMANB_HPP_
 #define CPP01_EX03_HUMANB_HPP_
+
+#include "Weapon.hpp"
 
 /**
  * @brief HumanB class
