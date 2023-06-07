@@ -6,9 +6,12 @@
 /*   By: yena <yena@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 20:40:23 by yena              #+#    #+#             */
-/*   Updated: 2023/06/07 21:14:57 by yena             ###   ########.fr       */
+/*   Updated: 2023/06/07 21:35:24 by yena             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "HumanA.hpp"
+#include "HumanB.hpp"
 
 int main(void)
 {
