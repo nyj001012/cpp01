@@ -6,7 +6,7 @@
 /*   By: yena <yena@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 12:36:05 by yena              #+#    #+#             */
-/*   Updated: 2023/06/07 13:06:13 by yena             ###   ########.fr       */
+/*   Updated: 2023/06/07 13:45:49 by yena             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ class Zombie {
 
  public:
   Zombie(std::string name);
-  ~Zombie();
-  void announce();
+  ~Zombie(void);
+  void announce(void);
 };
 
 #endif //CPP01_ZOMBIE_HPP
