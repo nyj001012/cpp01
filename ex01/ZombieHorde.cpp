@@ -1,33 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   ZombieHorde.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yena <yena@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/07 12:36:05 by yena              #+#    #+#             */
-/*   Updated: 2023/06/07 13:42:19 by yena             ###   ########.fr       */
+/*   Created: 2023/06/07 13:10:57 by yena              #+#    #+#             */
+/*   Updated: 2023/06/07 13:45:13 by yena             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CPP01_ZOMBIE_HPP
-#define CPP01_ZOMBIE_HPP
-
-# include <iostream>
+#include "Zombie.hpp"
 
 /**
- * @brief Zombie class
+ * @brief Create Zombie horde and announce its name
+ * @param N number of Zombie
+ * @param name name of Zombie
+ * @return
  */
-class Zombie {
- private:
-  std::string _name; ///> Zombie's name
-
- public:
-  Zombie(std::string name);
-  Zombie(void);
-  ~Zombie(void);
-  void announce(void);
-  void setName(std::string name);
-};
-
-#endif //CPP01_ZOMBIE_HPP
+Zombie *zombieHorde(int N, std::string name) {
+  Zombie *zombies = new Zombie[N];
+  for (int i = 0; i < N; i++) {
+    zombies[i].setName(name + ":" + std::to_string(i));
+    zombies[i].announce();
+  }
+  return (zombies);
+}
