@@ -6,7 +6,7 @@
 /*   By: yena <yena@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 20:39:58 by yena              #+#    #+#             */
-/*   Updated: 2023/06/07 21:26:08 by yena             ###   ########.fr       */
+/*   Updated: 2023/06/07 21:30:07 by yena             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@ HumanB::HumanB(std::string name) {
  this->_weapon = NULL;
 }
 
-HumanB(const HumanB &object) {
+HumanB::HumanB(const HumanB &object) {
 
 }
-HumanB &operator=(const HumanB &object) {
+HumanB::HumanB &operator=(const HumanB &object) {
 
 }
 
