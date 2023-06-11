@@ -6,7 +6,7 @@
 /*   By: yena <yena@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 20:39:21 by yena              #+#    #+#             */
-/*   Updated: 2023/06/07 21:55:36 by yena             ###   ########.fr       */
+/*   Updated: 2023/06/12 08:03:38 by yena             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ class HumanA {
   HumanA &operator=(const HumanA &object);
   ~HumanA();
   void attack();
+  const std::string &getName() const;
+  const Weapon &getWeapon() const;
 };
 
 #endif //CPP01_EX03_HUMANA_HPP_

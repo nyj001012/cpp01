@@ -6,7 +6,7 @@
 /*   By: yena <yena@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 20:37:53 by yena              #+#    #+#             */
-/*   Updated: 2023/06/07 21:55:52 by yena             ###   ########.fr       */
+/*   Updated: 2023/06/12 08:10:36 by yena             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,14 @@
  */
 class Weapon {
  private:
-  const std::string _type; ///< const reference to weapon type string
+  std::string _type; ///< weapon type string
 
  public:
   Weapon(std::string type);
   Weapon(const Weapon &object);
   Weapon &operator=(const Weapon &object);
   ~Weapon();
-  std::string getType();
+  const std::string &getType(void) const;
   void setType(std::string type);
 };
 

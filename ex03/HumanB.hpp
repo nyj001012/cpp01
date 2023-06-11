@@ -6,7 +6,7 @@
 /*   By: yena <yena@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 20:39:58 by yena              #+#    #+#             */
-/*   Updated: 2023/06/07 21:55:33 by yena             ###   ########.fr       */
+/*   Updated: 2023/06/12 08:09:01 by yena             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 class HumanB {
  private:
   std::string _name; ///< HumanB's name
-  Weapon &_weapon; ///< HumanB's weapon
+  Weapon *_weapon; ///< HumanB's weapon
 
  public:
   HumanB(std::string name);
@@ -31,6 +31,8 @@ class HumanB {
   ~HumanB(void);
   void attack(void);
   void setWeapon(Weapon &weapon);
+  const std::string getName() const;
+  Weapon *getWeapon() const;
 };
 
 #endif //CPP01_EX03_HUMANB_HPP_
