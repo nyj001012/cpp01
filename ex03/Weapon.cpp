@@ -6,7 +6,7 @@
 /*   By: yena <yena@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 20:37:53 by yena              #+#    #+#             */
-/*   Updated: 2023/06/12 08:10:13 by yena             ###   ########.fr       */
+/*   Updated: 2023/06/12 14:19:13 by yena             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ Weapon::~Weapon(void) {
  * @brief Get the Type object.
  * @return std::string
  */
-const std::string &Weapon::getType() const {
+const std::string &Weapon::getType(void) const {
   return (this->_type);
 }
 

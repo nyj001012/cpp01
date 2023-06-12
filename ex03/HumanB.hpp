@@ -6,7 +6,7 @@
 /*   By: yena <yena@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 20:39:58 by yena              #+#    #+#             */
-/*   Updated: 2023/06/12 08:09:01 by yena             ###   ########.fr       */
+/*   Updated: 2023/06/12 14:18:51 by yena             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ class HumanB {
   void attack(void);
   void setWeapon(Weapon &weapon);
   const std::string getName() const;
-  Weapon *getWeapon() const;
+  Weapon *getWeapon(void) const;
 };
 
 #endif //CPP01_EX03_HUMANB_HPP_

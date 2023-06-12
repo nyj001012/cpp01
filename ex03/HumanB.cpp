@@ -6,7 +6,7 @@
 /*   By: yena <yena@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 20:39:58 by yena              #+#    #+#             */
-/*   Updated: 2023/06/12 08:09:55 by yena             ###   ########.fr       */
+/*   Updated: 2023/06/12 14:19:02 by yena             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void HumanB::setWeapon(Weapon &weapon) {
  * @brief Get the Name object.
  * @return const std::string
  */
-const std::string HumanB::getName() const {
+const std::string HumanB::getName(void) const {
   return (this->_name);
 }
 
@@ -57,6 +57,6 @@ const std::string HumanB::getName() const {
  * @brief Get the Weapon object.
  * @return Weapon *
  */
-Weapon *HumanB::getWeapon() const {
+Weapon *HumanB::getWeapon(void) const {
   return (this->_weapon);
 }
