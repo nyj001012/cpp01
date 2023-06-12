@@ -1,9 +1,8 @@
-NAME = war
+NAME = replace
 SRCS = main.cpp \
-	   HumanA.cpp \
-	   HumanB.cpp \
-	   Weapon.cpp
+	   replace_and_store_file.cpp
 OBJS = ${SRCS:.cpp=.o}
+INC = includes
 
 CC = clang++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
@@ -18,7 +17,7 @@ ${NAME}:	${OBJS}
 
 
 %.o: %.cpp
-		@${CC} ${CFLAGS} -I . -c $< -o ${<:.cpp=.o}
+		@${CC} ${CFLAGS} -I ${INC} -c $< -o ${<:.cpp=.o}
 
 clean:
 		${RM} ${OBJS}
