@@ -6,7 +6,7 @@
 /*   By: yena <yena@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/12 19:05:35 by yena              #+#    #+#             */
-/*   Updated: 2023/06/12 20:14:32 by yena             ###   ########.fr       */
+/*   Updated: 2023/06/12 20:06:07 by yena             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,42 +41,31 @@ Karen &Karen::operator=(const Karen &karen) {
  * @brief print debug log
  */
 void Karen::debug(void) {
-  std::cout << "\033[0;34m[ DEBUG ]\033[0m"
-               " I love to get extra bacon"
-               " for my 7XL-double-cheese-triple-pickle-special-ketchup burger."
-               " I just love it!"
-            << std::endl;
+  std::cout << "\033[0;36m[ DEBUG ]\033[0m " << "yena: true" << std::endl;
 }
 
 /**
  * @brief print info log
  */
 void Karen::info(void) {
-  std::cout << "\033[0;37m[ INFO ]\033[0m"
-            << " I cannot believe adding extra bacon cost more money."
-               " You don’t put enough!"
-               " If you did I would not have to ask for it!"
-            << std::endl;
+  std::cout << "\033[0;37m[ INFO ]\033[0m "
+            << "1 node malloced for 1KB" << std::endl;
 }
 
 /**
  * @brief print warning log
  */
 void Karen::warning(void) {
-  std::cout << "\033[0;33m[ WARNING ]\033[0m"
-            << " I think I deserve to have some extra bacon for free."
-               " I’ve been coming here for years"
-               " and you just started working here last month."
-            << std::endl;
+  std::cout << "\033[0;33m[ WARNING ]\033[0m "
+            << "undefined behaviour" << std::endl;
 }
 
 /**
  * @brief print error log
  */
 void Karen::error(void) {
-  std::cout << "\033[0;31m[ ERROR ]\033[0m"
-            << " This is unacceptable, I want to speak to the manager now."
-            << std::endl;
+  std::cout << "\033[0;31m[ ERROR ]\033[0m "
+            << "Segmentation fault" << std::endl;
 }
 
 /**
@@ -90,7 +79,7 @@ void Karen::complain(std::string level) {
   if (i < LEVEL_COUNT)
     (this->*_printLog[i])();
   else
-    std::cout << "\033[0;35m[ KAREN ]\033[0m"
+    std::cout << "\033[0;35m[ Karen ]\033[0m"
               << " invalid level: " << level << std::endl;
 }
 
