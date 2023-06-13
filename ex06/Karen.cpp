@@ -6,7 +6,7 @@
 /*   By: yena <yena@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/12 19:05:35 by yena              #+#    #+#             */
-/*   Updated: 2023/06/12 20:06:07 by yena             ###   ########.fr       */
+/*   Updated: 2023/06/13 15:15:28 by yena             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,14 +73,16 @@ void Karen::error(void) {
  * @param level
  */
 void Karen::complain(std::string level) {
-  std::size_t i;
-
-  i = getLevelIndex(level);
-  if (i < LEVEL_COUNT)
-    (this->*_printLog[i])();
-  else
+  std::size_t index = getLevelIndex(level);
+  if (index == LEVEL_COUNT) {
     std::cout << "\033[0;35m[ Karen ]\033[0m"
               << " invalid level: " << level << std::endl;
+    return;
+  }
+  for (std::size_t i = 0; i < LEVEL_COUNT; i++) {
+    if (i >= index)
+      (this->*_printLog[i])();
+  }
 }
 
 /**
@@ -89,13 +91,9 @@ void Karen::complain(std::string level) {
  * @return index of level
  */
 std::size_t Karen::getLevelIndex(std::string level) {
-  std::size_t i;
-
-  i = 0;
-  while (i < LEVEL_COUNT) {
+  for (std::size_t i = 0; i < LEVEL_COUNT; i++) {
     if (level == _levels[i])
       return (i);
-    i++;
   }
-  return (i);
+  return (LEVEL_COUNT);
 }
