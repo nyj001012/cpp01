@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CPP01_EX05_Harl_HPP_
-#define CPP01_EX05_Harl_HPP_
+#ifndef CPP01_EX05_HARL_HPP_
+#define CPP01_EX05_HARL_HPP_
 
 # include <iostream>
 # define LEVEL_COUNT 4
@@ -33,4 +33,4 @@ class Harl {
   std::size_t getLevelIndex(std::string level);
 };
 
-#endif //CPP01_EX05_Harl_HPP_
+#endif //CPP01_EX05_HARL_HPP_
