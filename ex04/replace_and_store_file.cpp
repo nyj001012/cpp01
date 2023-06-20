@@ -54,14 +54,15 @@ void replace_and_store_file(std::string filename, std::string replaced_file,
     std::cout << F_RED << "Error: file open failed" << FB_DEFAULT << std::endl;
     return;
   }
-
   std::ofstream output_stream(replaced_file);
-  while (input_stream.is_open() && output_stream.is_open()) {
+  if (!output_stream.is_open()) {
+    std::cout << F_RED << "Error: file open failed" << FB_DEFAULT << std::endl;
+    return;
+  }
+  while (input_stream.eof()) {
     std::getline(input_stream, line);
     line = replace_line(line, s1, s2);
     output_stream << line;
-    if (input_stream.eof())
-      break;
     output_stream << std::endl;
   }
   input_stream.close();
