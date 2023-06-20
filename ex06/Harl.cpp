@@ -13,14 +13,14 @@
 #include "Harl.hpp"
 
 Harl::Harl(void) {
-  _levels[0] = "DEBUG";
-  _levels[1] = "INFO";
-  _levels[2] = "WARNING";
-  _levels[3] = "ERROR";
-  _printLog[0] = &Harl::debug;
-  _printLog[1] = &Harl::info;
-  _printLog[2] = &Harl::warning;
-  _printLog[3] = &Harl::error;
+  _levels[DEBUG] = "DEBUG";
+  _levels[INFO] = "INFO";
+  _levels[WARNING] = "WARNING";
+  _levels[ERROR] = "ERROR";
+  _printLog[DEBUG] = &Harl::debug;
+  _printLog[INFO] = &Harl::info;
+  _printLog[WARNING] = &Harl::warning;
+  _printLog[ERROR] = &Harl::error;
 }
 
 Harl::~Harl(void) {
@@ -50,7 +50,7 @@ void Harl::debug(void) {
  */
 void Harl::info(void) {
   std::cout << F_WHITE << "[ INFO ]" << FB_DEFAULT
-            << " 1 node malloced for 1KB" << std::endl;
+            << " INFO node malloced for 1KB" << std::endl;
 }
 
 /**
@@ -80,9 +80,17 @@ void Harl::complain(std::string level) {
               << " invalid level: " << level << std::endl;
     return;
   }
-  for (std::size_t i = 0; i < LEVEL_COUNT; i++) {
-    if (i >= index)
-      (this->*_printLog[i])();
+  switch (index) {
+    case DEBUG:
+      debug();
+    case INFO:
+      info();
+    case WARNING:
+      warning();
+    case ERROR:
+      error();
+    default:
+      break;
   }
 }
 
