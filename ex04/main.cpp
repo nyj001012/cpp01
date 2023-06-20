@@ -26,6 +26,6 @@ int main(int argc, char *argv[]) {
     replace_and_store_file(filename, replaced_file, s1, s2);
     return (0);
   }
-  std::cout << "\033[0;31mError: invalid arguments" << std::endl;
+  std::cout << "\033[0;31mError: invalid arguments\033[0m" << std::endl;
   return (1);
 }
