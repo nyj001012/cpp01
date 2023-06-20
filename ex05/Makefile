@@ -4,7 +4,7 @@ SRCS = main.cpp \
 OBJS = ${SRCS:.cpp=.o}
 INC = .
 
-CC = clang++
+CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 RM = rm -f
 
@@ -25,4 +25,6 @@ clean:
 fclean:	clean
 		${RM} ${NAME}
 
-re:		fclean all
+re:
+		${MAKE} fclean
+		${MAKE} all

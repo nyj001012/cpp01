@@ -22,7 +22,7 @@
 class HumanA {
  private:
   std::string _name; ///< HumanA's name
-  Weapon &_weapon; ///< HumanA's weapon
+  Weapon &_weapon;   ///< HumanA's weapon
 
  public:
   HumanA(std::string name, Weapon &weapon);
