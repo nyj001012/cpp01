@@ -20,7 +20,7 @@
  */
 class Zombie {
  private:
-  std::string name; ///> Zombie's name
+  std::string _name; ///> Zombie's name
 
  public:
   Zombie(std::string name);
