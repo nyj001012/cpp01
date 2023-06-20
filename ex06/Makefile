@@ -1,6 +1,6 @@
-NAME = karenFilter
+NAME = HarlFilter
 SRCS = main.cpp \
-	   Karen.cpp
+	   Harl.cpp
 OBJS = ${SRCS:.cpp=.o}
 INC = .
 

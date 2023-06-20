@@ -1,6 +1,6 @@
-NAME = karen2.0
+NAME = Harl2.0
 SRCS = main.cpp \
-	   Karen.cpp
+	   Harl.cpp
 OBJS = ${SRCS:.cpp=.o}
 INC = .
 

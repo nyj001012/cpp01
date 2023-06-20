@@ -10,17 +10,17 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Karen.hpp"
+#include "Harl.hpp"
 
 int main(void) {
   std::string level;
-  Karen karen;
+  Harl Harl;
 
   while (1) {
     std::cout << "Enter log level: ";
     std::getline(std::cin, level);
     if (level == "EXIT" || level == "")
       break;
-    karen.complain(level);
+    Harl.complain(level);
   }
 }

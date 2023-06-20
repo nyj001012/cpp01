@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Karen.cpp                                          :+:      :+:    :+:   */
+/*   Harl.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yena <yena@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,28 +10,28 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Karen.hpp"
+#include "Harl.hpp"
 
-Karen::Karen(void) {
+Harl::Harl(void) {
   _levels[0] = "DEBUG";
   _levels[1] = "INFO";
   _levels[2] = "WARNING";
   _levels[3] = "ERROR";
-  _printLog[0] = &Karen::debug;
-  _printLog[1] = &Karen::info;
-  _printLog[2] = &Karen::warning;
-  _printLog[3] = &Karen::error;
+  _printLog[0] = &Harl::debug;
+  _printLog[1] = &Harl::info;
+  _printLog[2] = &Harl::warning;
+  _printLog[3] = &Harl::error;
 }
 
-Karen::~Karen(void) {
+Harl::~Harl(void) {
 
 }
 
-Karen &Karen::operator=(const Karen &karen) {
-  if (this != &karen) {
+Harl &Harl::operator=(const Harl &Harl) {
+  if (this != &Harl) {
     for (int i = 0; i < LEVEL_COUNT; i++) {
-      _levels[i] = karen._levels[i];
-      _printLog[i] = karen._printLog[i];
+      _levels[i] = Harl._levels[i];
+      _printLog[i] = Harl._printLog[i];
     }
   }
   return (*this);
@@ -40,14 +40,14 @@ Karen &Karen::operator=(const Karen &karen) {
 /**
  * @brief print debug log
  */
-void Karen::debug(void) {
+void Harl::debug(void) {
   std::cout << "\033[0;36m[ DEBUG ]\033[0m " << "yena: true" << std::endl;
 }
 
 /**
  * @brief print info log
  */
-void Karen::info(void) {
+void Harl::info(void) {
   std::cout << "\033[0;37m[ INFO ]\033[0m "
             << "1 node malloced for 1KB" << std::endl;
 }
@@ -55,7 +55,7 @@ void Karen::info(void) {
 /**
  * @brief print warning log
  */
-void Karen::warning(void) {
+void Harl::warning(void) {
   std::cout << "\033[0;33m[ WARNING ]\033[0m "
             << "undefined behaviour" << std::endl;
 }
@@ -63,7 +63,7 @@ void Karen::warning(void) {
 /**
  * @brief print error log
  */
-void Karen::error(void) {
+void Harl::error(void) {
   std::cout << "\033[0;31m[ ERROR ]\033[0m "
             << "Segmentation fault" << std::endl;
 }
@@ -72,10 +72,10 @@ void Karen::error(void) {
  * @brief call functions depends on level
  * @param level
  */
-void Karen::complain(std::string level) {
+void Harl::complain(std::string level) {
   std::size_t index = getLevelIndex(level);
   if (index == LEVEL_COUNT) {
-    std::cout << "\033[0;35m[ Karen ]\033[0m"
+    std::cout << "\033[0;35m[ Harl ]\033[0m"
               << " invalid level: " << level << std::endl;
     return;
   }
@@ -90,7 +90,7 @@ void Karen::complain(std::string level) {
  * @param level
  * @return index of level
  */
-std::size_t Karen::getLevelIndex(std::string level) {
+std::size_t Harl::getLevelIndex(std::string level) {
   for (std::size_t i = 0; i < LEVEL_COUNT; i++) {
     if (level == _levels[i])
       return (i);
