@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/common.hpp"
+#include "common.hpp"
 
 /**
  * replace line with find_to to replace_with
@@ -26,11 +26,9 @@ std::string replace_line(std::string line, std::string find_to, std::string repl
   position = line.find(find_to);
   if (position == std::string::npos)
     return (line);
-  replaced_line = line.replace(
-      position,
-      find_to.length(),
-      replace_with
-  );
+  replaced_line = std::string::substr(0, position);
+  replaced_line += replace_with;
+  replaced_line += std::string::substr(position + find_to.length());
   return (replaced_line);
 }
 
