@@ -51,7 +51,7 @@ void replace_and_store_file(std::string filename, std::string replaced_file,
   std::string line;
 
   if (!input_stream.is_open()) {
-    std::cout << "\033[0;31mError: file open failed\033[0m" << std::endl;
+    std::cout << F_RED << "Error: file open failed" << FB_DEFAULT << std::endl;
     return;
   }
 
@@ -66,5 +66,6 @@ void replace_and_store_file(std::string filename, std::string replaced_file,
   }
   input_stream.close();
   output_stream.close();
-  std::cout << "\033[0;32mSuccess: " << replaced_file << " created\033[0m" << std::endl;
+  std::cout << F_GREEN << "Success: " << replaced_file << " created"
+            << FB_DEFAULT << std::endl;
 }

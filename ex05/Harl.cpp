@@ -41,31 +41,32 @@ Harl &Harl::operator=(const Harl &Harl) {
  * @brief print debug log
  */
 void Harl::debug(void) {
-  std::cout << "\033[0;36m[ DEBUG ]\033[0m " << "yena: true" << std::endl;
+  std::cout << F_CYAN << "[ DEBUG ]" << FB_DEFAULT
+            << " yena: true" << std::endl;
 }
 
 /**
  * @brief print info log
  */
 void Harl::info(void) {
-  std::cout << "\033[0;37m[ INFO ]\033[0m "
-            << "1 node malloced for 1KB" << std::endl;
+  std::cout << F_WHITE << "[ INFO ]" << FB_DEFAULT
+            << " 1 node malloced for 1KB" << std::endl;
 }
 
 /**
  * @brief print warning log
  */
 void Harl::warning(void) {
-  std::cout << "\033[0;33m[ WARNING ]\033[0m "
-            << "undefined behaviour" << std::endl;
+  std::cout << F_YELLOW << "[ WARNING ]" << FB_DEFAULT
+            << " undefined behaviour" << std::endl;
 }
 
 /**
  * @brief print error log
  */
 void Harl::error(void) {
-  std::cout << "\033[0;31m[ ERROR ]\033[0m "
-            << "Segmentation fault" << std::endl;
+  std::cout << F_RED << "[ ERROR ]" << FB_DEFAULT
+            << " Segmentation fault" << std::endl;
 }
 
 /**
@@ -79,7 +80,7 @@ void Harl::complain(std::string level) {
   if (i < LEVEL_COUNT)
     (this->*_printLog[i])();
   else
-    std::cout << "\033[0;35m[ Harl ]\033[0m"
+    std::cout << F_MAGENTA << "[ Harl ]" << FB_DEFAULT
               << " invalid level: " << level << std::endl;
 }
 
